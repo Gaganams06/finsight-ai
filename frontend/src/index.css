@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased selection:bg-amber-500/25 selection:text-amber-300;
+  }
+}
+
+/* Custom gold metallic gradient utility */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fef08a 0%, #fbbf24 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #fbbf24 0%, #d97706 50%, #b45309 100%);
+}
+
+.gold-border-glow {
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.15);
+}
+
+@media print {
+  /* Hide UI elements during print */
+  header,
+  .no-print,
+  button,
+  #upload-section {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  #printable-report {
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
